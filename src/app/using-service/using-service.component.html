@@ -1,0 +1,27 @@
+<button (click)="CallHelloService()"> Call Hello Method </button>
+
+<button (click)="GetAllEmployees()"> Get All Employees </button>
+
+
+<h2> List of Employees </h2>
+<table>
+  <tr>
+    <th> Employee Code </th>
+    <th> Employee Name </th>
+    <th> Gender </th>
+    <th> Annual Salary </th>
+    <th> Date of Birth</th>
+  </tr>
+  <ng-container *ngIf="employees.length>0"; else elseBlock>
+   <tr *ngFor="let employee of employees">
+    <td> {{employee.code | uppercase}} </td>
+    <td> {{employee.name | titlecase | gender : employee.gender }} </td>
+    <td> {{employee.gender}} </td>
+    <td> {{employee.annualSalary | currency :'INR'}}</td>
+    <td> {{employee.dateOfBirth | date :'mediumDate' }}</td>
+   </tr>
+  <ng-template #elseBlock>
+    <h2> There are no records </h2>
+  </ng-template>
+  </ng-container>
+</table>

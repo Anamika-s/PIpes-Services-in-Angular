@@ -1,0 +1,41 @@
+
+<h1> Hello {{name | lowercase }}  <br>
+{{name | uppercase}} </h1>
+
+<h2> Today is {{todayDate}} <br>
+{{todayDate | date }} <br>
+{{todayDate | date :'d/M/y'}} <br>
+{{todayDate | date :'shortTime'}} <br>
+{{todayDate | date: 'longDate'}}
+{{todayDate | date :'longTime'}}
+
+<br>
+
+</h2>
+
+
+<h2> JSON Pipe  </h2>
+<b> {{jsonval | json}}</b>
+
+<h2> Array </h2>
+<b> {{months | slice: 2:4}}</b>
+
+<h2> Decimal Pipe </h2>
+<b> Hello{{454.9090077 | number :'4.3'}}Hello</b>
+<b> {{22.9897 | number :'2.0-0'}} </b>
+<b> {{22.9897 | number :'2.2-6'}} </b>
+<b> {{22.9897 | number :'4.2-3'}} </b>
+<b> {{22.9211 | number :'2.2-3'}} </b>
+
+<h2> Percent Pipe </h2>
+{{00.5654 | percent}}
+
+<h2> Currency Pipe </h2>
+{{7889.90 | currency }}
+
+{{7889.90 | currency : 'INR' }}
+
+
+
+
+
